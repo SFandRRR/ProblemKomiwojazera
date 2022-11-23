@@ -26,7 +26,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="<-"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/obecne_miasto_nazwa"
@@ -37,14 +38,15 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="[]" />
 
             <Button
                 android:id="@+id/button_miasto_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="->"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <ScrollView
@@ -607,7 +609,7 @@
                     android:id="@+id/textview_process"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="." />
             </LinearLayout>
         </ScrollView>
 
@@ -622,7 +624,7 @@
                 android:id="@+id/button_zapisz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="Zapisz Wynik" />
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -638,7 +640,7 @@
                         android:id="@+id/textview_wynik"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="TextView" />
+                        android:text="." />
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
