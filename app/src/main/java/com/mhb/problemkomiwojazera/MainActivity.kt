@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class Vertex(val NumOVer : Int) {
     val Connections: IntArray = IntArray(NumOVer)
@@ -92,5 +93,11 @@ class MainActivity : AppCompatActivity() {
         val text_process : TextView = findViewById(R.id.textview_process)
         val button_save : Button = findViewById(R.id.button_zapisz)
         val text_wynik: TextView = findViewById(R.id.textview_wynik)
+
+        val Macierz = Matrix(16)
+        Macierz.CreateVerticies()
+        Toast.makeText(applicationContext, Macierz.Verticies.size.toString(), Toast.LENGTH_SHORT).show()
+
+
     }
 }
