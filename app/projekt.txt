@@ -1,0 +1,25 @@
+=== Funkcjonalność ===
+Program ma na zadaniu znalezienie najaktrótszej trasy na odwiedzenie każdego miasta, zaczynając od miasta początkowego i kończąc w tym samym mieście, odwiedzając każde miasto tylko raz.
+Ze względu na złożoność algorytmu, ograniczymy liczbę miast do 16.
+Do rozwiązania zostaną wykorzystane Grafy, gdzie waga połączeń bedzie wykorzystana jako długość trasy pomiędzy miastami.
+
+Wierzchołkom grafu będzie wstanie nadać nazwę oraz, użytkownik będzie wstanie ustawić długość trasy pomiędzy każdym miastem oraz wybrać punkt startowy.
+Wynik algorytmu będzie wyświetlany w aplikacji, a także zapisywany w postaci obrazu.
+
+=== Wygląd ===
+Orientacja aplikacji będzie pionowa.
+U szczytu widoku będzie wyświetlane obecne miasto, z opcją zmiany nazwy, a zboku dwa przyciski, umożliwiające przejście do następnego miasta.
+
+Pod tym znajdować się bedzie widok z opcją przesuwania, na podstawie obecnie wybranego miasta będą wyświetlane pola, do których będzie można wprowadzić długość trasy do innego miasta.
+Pozycji w tym widoku będzie 16, jedna dla każdego miasta, gdzie pole wprowadzania obecnego miasta będzie zablokowane, żeby nie tworzyć połączeń samych z sobą.
+
+Poniżej będzie kolejne okno przesuwne, tym razem wyświetlające proces tego algorytmu, w postaci tekstu.
+
+U samego dołu będzie wyświetlany finalny rezultat algorytmu,z znalezioną trasą.
+Oraz przyciskiem pozwalającym zapisać rezultat w postaci obrazu.
+
+=== Rozwiązania ===
+
+Trasa komiwojażera jest cyklem przechodzącym przez każdy wierzchołek grafu dokładnie jeden raz, więc jest to zatem cykl Hamiltona.
+Problem komiwojażera jest problemem o wykładniczej złożoności obliczeniowej O ( n! ).
+Ze względu na niewielką ilość miast, zostanie wykorzystana Rekurencyjna procedura TSP.
