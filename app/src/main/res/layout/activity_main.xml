@@ -22,14 +22,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button_miasto_prev"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Button" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/obecne_miasto_nazwa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -40,7 +40,7 @@
                 android:text="Name" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button_miasto_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -70,10 +70,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_do" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/miasto01_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -83,10 +83,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto01_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -100,21 +100,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto02_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto02_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -128,21 +133,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto03_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto03_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -156,21 +166,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto04_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto04_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -184,21 +199,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto05_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto05_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -212,21 +232,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto06_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto06_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -240,21 +265,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto07_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto07_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -268,21 +298,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto08_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto08_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -296,21 +331,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto09_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto09_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -324,21 +364,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto10_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto10_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -352,21 +397,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto11_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto11_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -380,21 +430,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto12_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto12_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -408,21 +463,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto13_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto13_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -436,21 +496,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto14_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto14_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -464,21 +529,26 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto15_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto15_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -492,27 +562,33 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/miasto_do" />
+
+                    <TextView
+                        android:id="@+id/miasto16_nazwa"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="@string/miasto_dlugosc" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal"
+                        android:id="@+id/miasto16_odleglosc"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
                         android:inputType="numberDecimal" />
                 </LinearLayout>
+
             </LinearLayout>
         </ScrollView>
 
@@ -528,7 +604,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textview_process"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="TextView" />
@@ -543,7 +619,7 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button_zapisz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Button" />
@@ -559,7 +635,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textview_wynik"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="TextView" />

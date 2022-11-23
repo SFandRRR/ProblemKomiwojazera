@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProblemKomiwojazera</string>
+    <string name="miasto_do">Do :</string>
+    <string name="miasto_dlugosc">Odległość :</string>
 </resources>
