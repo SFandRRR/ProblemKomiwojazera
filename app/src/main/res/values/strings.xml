@@ -2,4 +2,6 @@
     <string name="app_name">ProblemKomiwojazera</string>
     <string name="miasto_do">Do :</string>
     <string name="miasto_dlugosc">Odległość :</string>
+    <string name="lewo"><![CDATA[<-]]></string>
+    <string name="prawo"><![CDATA[->]]></string>
 </resources>
