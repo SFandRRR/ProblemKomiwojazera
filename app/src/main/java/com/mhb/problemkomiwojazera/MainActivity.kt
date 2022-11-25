@@ -98,6 +98,106 @@ class MainActivity : AppCompatActivity() {
         Macierz.CreateVerticies()
         Toast.makeText(applicationContext, Macierz.Verticies.size.toString(), Toast.LENGTH_SHORT).show()
 
+        var WybraneMiasto = 0
+
+        fun ZmianaWybranegoMisata(change:Int){
+
+            Macierz.Verticies[WybraneMiasto].Data=input_miasto_name.text.toString()
+            var miastoname= Macierz.Verticies[WybraneMiasto].Data
+
+            input_miasto_name.setText(miastoname)
+
+            when(WybraneMiasto){
+                0 -> list01_miasto.text=miastoname
+                1 -> list02_miasto.text=miastoname
+                2 -> list03_miasto.text=miastoname
+                3 -> list04_miasto.text=miastoname
+                4 -> list05_miasto.text=miastoname
+                5 -> list06_miasto.text=miastoname
+                6 -> list07_miasto.text=miastoname
+                7 -> list08_miasto.text=miastoname
+                8 -> list09_miasto.text=miastoname
+                9 -> list10_miasto.text=miastoname
+                10 -> list11_miasto.text=miastoname
+                11 -> list12_miasto.text=miastoname
+                12 -> list13_miasto.text=miastoname
+                13 -> list14_miasto.text=miastoname
+                14 -> list15_miasto.text=miastoname
+                15 -> list16_miasto.text=miastoname
+            }
+
+            WybraneMiasto+=change
+
+            if(WybraneMiasto<= 0){
+                WybraneMiasto=0
+            }
+            if(WybraneMiasto>=15){
+                WybraneMiasto=15
+            }
+
+            miastoname= Macierz.Verticies[WybraneMiasto].Data
+
+            input_miasto_name.setText(miastoname)
+
+            when(WybraneMiasto){
+                0 -> list01_miasto.text=miastoname
+                1 -> list02_miasto.text=miastoname
+                2 -> list03_miasto.text=miastoname
+                3 -> list04_miasto.text=miastoname
+                4 -> list05_miasto.text=miastoname
+                5 -> list06_miasto.text=miastoname
+                6 -> list07_miasto.text=miastoname
+                7 -> list08_miasto.text=miastoname
+                8 -> list09_miasto.text=miastoname
+                9 -> list10_miasto.text=miastoname
+                10 -> list11_miasto.text=miastoname
+                11 -> list12_miasto.text=miastoname
+                12 -> list13_miasto.text=miastoname
+                13 -> list14_miasto.text=miastoname
+                14 -> list15_miasto.text=miastoname
+                15 -> list16_miasto.text=miastoname
+            }
+
+        }//Koniec Funkcji zmiany wybranego miasta
+
+        for(x in 0..15) {
+
+            var miastoname = "Miasto "+(x+1).toString()
+
+            Macierz.Verticies[x].Data=miastoname.toString()
+
+            when(x){
+            0 -> list01_miasto.text = miastoname
+            1 -> list02_miasto.text = miastoname
+            2 -> list03_miasto.text = miastoname
+            3 -> list04_miasto.text = miastoname
+            4 -> list05_miasto.text = miastoname
+            5 -> list06_miasto.text = miastoname
+            6 -> list07_miasto.text = miastoname
+            7 -> list08_miasto.text = miastoname
+            8 -> list09_miasto.text = miastoname
+            9 -> list10_miasto.text = miastoname
+            10 -> list11_miasto.text = miastoname
+            11 -> list12_miasto.text = miastoname
+            12 -> list13_miasto.text = miastoname
+            13 -> list14_miasto.text = miastoname
+            14 -> list15_miasto.text = miastoname
+            15 -> list16_miasto.text = miastoname
+            }
+        }
+        input_miasto_name.setText("Miasto 1")
+
+
+        ZmianaWybranegoMisata(0)
+
+        button_miasto_next.setOnClickListener(){
+            ZmianaWybranegoMisata(1)
+        }
+        button_miasto_prev.setOnClickListener(){
+            ZmianaWybranegoMisata(-1)
+        }
+
+
 
     }
 }
