@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import kotlin.random.Random
 
 class Vertex(val NumOVer : Int) {
     val Connections: IntArray = IntArray(NumOVer)
@@ -13,7 +14,7 @@ class Vertex(val NumOVer : Int) {
     var Data = ""
 
     fun Connect(to : Int, weight : Int){
-        if(to >= 1 && to<=Connections.size){
+        if(to >= 0 && to<=Connections.size){
             if(weight >= 0){
                 Connections[to]=weight
             }
@@ -92,6 +93,7 @@ class MainActivity : AppCompatActivity() {
 
         val text_process : TextView = findViewById(R.id.textview_process)
         val button_save : Button = findViewById(R.id.button_zapisz)
+        val button_random : Button = findViewById(R.id.button_losuj)
         val text_wynik: TextView = findViewById(R.id.textview_wynik)
 
         val Macierz = Matrix(16)
@@ -188,16 +190,58 @@ class MainActivity : AppCompatActivity() {
         input_miasto_name.setText("Miasto 1")
 
 
+        fun WyswietlaneOdleglosci(){
+
+            list01_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[0].toString())
+            list02_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[1].toString())
+            list03_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[2].toString())
+            list04_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[3].toString())
+            list05_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[4].toString())
+            list06_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[5].toString())
+            list07_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[6].toString())
+            list08_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[7].toString())
+            list09_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[8].toString())
+            list10_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[9].toString())
+            list11_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[10].toString())
+            list12_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[11].toString())
+            list13_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[12].toString())
+            list14_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[13].toString())
+            list15_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[14].toString())
+            list16_weight.setText(Macierz.Verticies[WybraneMiasto].Connections[15].toString())
+        }//Zmiana Wyswietlania odleglosci
+
         ZmianaWybranegoMisata(0)
 
         button_miasto_next.setOnClickListener(){
             ZmianaWybranegoMisata(1)
+            WyswietlaneOdleglosci()
         }
         button_miasto_prev.setOnClickListener(){
             ZmianaWybranegoMisata(-1)
+            WyswietlaneOdleglosci()
         }
 
 
+        WyswietlaneOdleglosci()
+
+        fun ConnectWith(From :Int, To:Int, Weight:Int){
+            if(From!=To){
+                Macierz.Verticies[From].Connect(To,Weight)
+            }
+        }
+
+        button_random.setOnClickListener(){
+            var RandomWeight = 0
+            for(x in 0..15){
+                for(z in 0..15){
+                    RandomWeight = Random.nextInt(1,100)
+                    ConnectWith(x,z,RandomWeight)
+                    ConnectWith(z,x,RandomWeight)
+                }
+            }
+
+            WyswietlaneOdleglosci()
+        }
 
     }
 }
