@@ -116,6 +116,7 @@ class MainActivity : AppCompatActivity() {
 
         val text_process : TextView = findViewById(R.id.textview_process)
         val button_save : Button = findViewById(R.id.button_zapisz)
+        val button_search : Button = findViewById(R.id.button_szukaj)
         val button_random : Button = findViewById(R.id.button_losuj)
         val text_wynik: TextView = findViewById(R.id.textview_wynik)
 
@@ -444,5 +445,24 @@ class MainActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
         })
+
+        button_search.setOnClickListener(){
+            var Check=true
+            for(x in 0..15){
+                for(z in 0..15){
+                    if(x!=z){
+                        if(Macierz.Verticies[x].Connections[z]==0){
+                            Check=false
+                            break
+                        }
+                    }
+                }
+            }
+            if(!Check){
+                Toast.makeText(applicationContext, "Brak połączenia", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
     }
 }

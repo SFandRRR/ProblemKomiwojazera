@@ -643,14 +643,14 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_zapisz"
+                android:id="@+id/button_szukaj"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Zapisz Wynik" />
+                android:text="Szukaj Drogi" />
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="170dp">
+                android:layout_height="140dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -665,6 +665,12 @@
                         android:text="." />
                 </LinearLayout>
             </ScrollView>
+
+            <Button
+                android:id="@+id/button_zapisz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zapisz Wynik" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
