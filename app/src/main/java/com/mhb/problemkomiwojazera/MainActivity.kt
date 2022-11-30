@@ -1,12 +1,18 @@
 package com.mhb.problemkomiwojazera
 
-import androidx.appcompat.app.AppCompatActivity
+import android.opengl.Visibility
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
+
 
 class Vertex(val NumOVer : Int) {
     val Connections: IntArray = IntArray(NumOVer)
@@ -91,6 +97,23 @@ class MainActivity : AppCompatActivity() {
         val list15_weight : EditText = findViewById(R.id.miasto15_odleglosc)
         val list16_weight : EditText = findViewById(R.id.miasto16_odleglosc)
 
+        val list01 : LinearLayout = findViewById(R.id.list01)
+        val list02 : LinearLayout = findViewById(R.id.list02)
+        val list03 : LinearLayout = findViewById(R.id.list03)
+        val list04 : LinearLayout = findViewById(R.id.list04)
+        val list05 : LinearLayout = findViewById(R.id.list05)
+        val list06 : LinearLayout = findViewById(R.id.list06)
+        val list07 : LinearLayout = findViewById(R.id.list07)
+        val list08 : LinearLayout = findViewById(R.id.list08)
+        val list09 : LinearLayout = findViewById(R.id.list09)
+        val list10 : LinearLayout = findViewById(R.id.list10)
+        val list11 : LinearLayout = findViewById(R.id.list11)
+        val list12 : LinearLayout = findViewById(R.id.list12)
+        val list13 : LinearLayout = findViewById(R.id.list13)
+        val list14 : LinearLayout = findViewById(R.id.list14)
+        val list15 : LinearLayout = findViewById(R.id.list15)
+        val list16 : LinearLayout = findViewById(R.id.list16)
+
         val text_process : TextView = findViewById(R.id.textview_process)
         val button_save : Button = findViewById(R.id.button_zapisz)
         val button_random : Button = findViewById(R.id.button_losuj)
@@ -98,7 +121,7 @@ class MainActivity : AppCompatActivity() {
 
         val Macierz = Matrix(16)
         Macierz.CreateVerticies()
-        Toast.makeText(applicationContext, Macierz.Verticies.size.toString(), Toast.LENGTH_SHORT).show()
+        //Toast.makeText(applicationContext, Macierz.Verticies.size.toString(), Toast.LENGTH_SHORT).show()
 
         var WybraneMiasto = 0
 
@@ -158,6 +181,42 @@ class MainActivity : AppCompatActivity() {
                 13 -> list14_miasto.text=miastoname
                 14 -> list15_miasto.text=miastoname
                 15 -> list16_miasto.text=miastoname
+            }
+
+            list01.visibility = View.VISIBLE
+            list02.visibility = View.VISIBLE
+            list03.visibility = View.VISIBLE
+            list04.visibility = View.VISIBLE
+            list05.visibility = View.VISIBLE
+            list06.visibility = View.VISIBLE
+            list07.visibility = View.VISIBLE
+            list08.visibility = View.VISIBLE
+            list09.visibility = View.VISIBLE
+            list10.visibility = View.VISIBLE
+            list11.visibility = View.VISIBLE
+            list12.visibility = View.VISIBLE
+            list13.visibility = View.VISIBLE
+            list14.visibility = View.VISIBLE
+            list15.visibility = View.VISIBLE
+            list16.visibility = View.VISIBLE
+
+            when(WybraneMiasto){
+                0 ->list01.visibility = View.GONE
+                1 ->list02.visibility = View.GONE
+                2 ->list03.visibility = View.GONE
+                3 ->list04.visibility = View.GONE
+                4 ->list05.visibility = View.GONE
+                5 ->list06.visibility = View.GONE
+                6 ->list07.visibility = View.GONE
+                7 ->list08.visibility = View.GONE
+                8 ->list09.visibility = View.GONE
+                9 ->list10.visibility = View.GONE
+                10 ->list11.visibility = View.GONE
+                11 ->list12.visibility = View.GONE
+                12 ->list13.visibility = View.GONE
+                13 ->list14.visibility = View.GONE
+                14 ->list15.visibility = View.GONE
+                15 ->list16.visibility = View.GONE
             }
 
         }//Koniec Funkcji zmiany wybranego miasta
@@ -226,7 +285,9 @@ class MainActivity : AppCompatActivity() {
 
         fun ConnectWith(From :Int, To:Int, Weight:Int){
             if(From!=To){
-                Macierz.Verticies[From].Connect(To,Weight)
+                if(Weight>0){
+                    Macierz.Verticies[From].Connect(To,Weight)
+                }
             }
         }
 
@@ -239,9 +300,149 @@ class MainActivity : AppCompatActivity() {
                     ConnectWith(z,x,RandomWeight)
                 }
             }
-
             WyswietlaneOdleglosci()
         }
 
+        fun ConnectCity(To:Int,Weight :String){
+            var Weight2=-1
+
+            if(Weight!=""){
+                Weight2=Integer.parseInt(Weight)
+            }
+            if(Weight2!=-1 && Weight2!=0){
+                ConnectWith(WybraneMiasto, To, Weight2)
+                ConnectWith(To, WybraneMiasto, Weight2)
+                //Toast.makeText(applicationContext, "Utworzono połączenie o wadze: "+Weight2.toString(), Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        list01_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(0,list01_weight.text.toString())
+
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list02_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(1,list02_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list03_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(2,list03_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list04_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(3,list04_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list05_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(4,list05_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list06_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(5,list06_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list07_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(6,list07_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list08_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(7,list08_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list09_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(8,list09_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list10_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(9,list10_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list11_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(10,list11_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list12_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(11,list12_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list13_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(12,list13_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list14_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(13,list14_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list15_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(14,list15_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
+
+        list16_weight.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+                ConnectCity(15,list16_weight.text.toString())
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+        })
     }
 }

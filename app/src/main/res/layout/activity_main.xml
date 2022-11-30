@@ -70,6 +70,7 @@
                     android:text="Losowo" />
 
                 <LinearLayout
+                    android:id="@+id/list01"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -103,6 +104,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list02"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -136,6 +138,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list03"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -169,6 +172,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list04"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -202,6 +206,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list05"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -235,6 +240,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list06"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -268,6 +274,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list07"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -301,6 +308,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list08"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -334,6 +342,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list09"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -367,6 +376,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list10"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -400,6 +410,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list11"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -433,6 +444,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -466,6 +478,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list13"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -499,6 +512,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list14"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -532,6 +546,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list15"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -565,6 +580,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/list16"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
