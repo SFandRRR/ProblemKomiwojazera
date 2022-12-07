@@ -1,9 +1,11 @@
 package com.mhb.problemkomiwojazera
 
+import android.nfc.Tag
 import android.opengl.Visibility
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -126,6 +128,8 @@ class MainActivity : AppCompatActivity() {
 
         var WybraneMiasto = 0
 
+        var powtorzeniacyklu=0
+
         var n = 16
         var v0=0
         var d=0
@@ -137,30 +141,36 @@ class MainActivity : AppCompatActivity() {
         for(i in 0..15){
             Visited[i]=false
         }
-
         fun CyklHamiltona(v :Int){
 
+            powtorzeniacyklu++
+            Log.i("Cykl ",  powtorzeniacyklu.toString()+" V:"+v.toString())
+
             SH.add(v)
+
             if(SH.size!=n){
                 Visited[v]=true
                 for(u in 0..15){
+                    if(Macierz.Verticies[v].Connections[u]==0){
+                        continue
+                    }
                     if(Visited[u]==true){
                         continue
                     }
-                    dH=dH+Macierz.Verticies[v].ConnectedTo[u]
+                    dH=dH+Macierz.Verticies[v].Connections[u]
                     CyklHamiltona(u)
-                    dH=dH-Macierz.Verticies[v].ConnectedTo[u]
+                    dH=dH-Macierz.Verticies[v].Connections[u]
                 }
                 Visited[v]=false
 
             }else{
-                if(Macierz.Verticies[v].ConnectedTo[v0]!=0){
-                    dH=dH+Macierz.Verticies[v].ConnectedTo[v0]
-                    if(dH<=d){
+                if(Macierz.Verticies[v].Connections[v0]!=0){
+                    dH=dH+Macierz.Verticies[v].Connections[v0]
+                    if(!(dH>=d)){
                         d=dH
                         S=SH
                     }
-                    dH=dH-Macierz.Verticies[v].ConnectedTo[v0]
+                    dH=dH-Macierz.Verticies[v].Connections[v0]
                 }
             }
             SH.removeFirst()
@@ -508,8 +518,12 @@ class MainActivity : AppCompatActivity() {
                 while(SH.isEmpty()==false){
                     SH.removeFirst()
                 }
+                for(i in 0..15){
+                    Visited[i]=false
+                }
                 d=999999999
                 dH=0
+
                 CyklHamiltona(0)
                 if(S.isEmpty()==false){
                     Toast.makeText(applicationContext, "Cos Znaleziono!", Toast.LENGTH_SHORT).show()
