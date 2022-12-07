@@ -126,6 +126,47 @@ class MainActivity : AppCompatActivity() {
 
         var WybraneMiasto = 0
 
+        var n = 16
+        var v0=0
+        var d=0
+        var dH = 0
+        var S = ArrayDeque<Int>()
+        var SH = ArrayDeque<Int>()
+        var Visited= BooleanArray(n)
+
+        for(i in 0..15){
+            Visited[i]=false
+        }
+
+        fun CyklHamiltona(v :Int){
+
+            SH.add(v)
+            if(SH.size!=n){
+                Visited[v]=true
+                for(u in 0..15){
+                    if(Visited[u]==true){
+                        continue
+                    }
+                    dH=dH+Macierz.Verticies[v].ConnectedTo[u]
+                    CyklHamiltona(u)
+                    dH=dH-Macierz.Verticies[v].ConnectedTo[u]
+                }
+                Visited[v]=false
+
+            }else{
+                if(Macierz.Verticies[v].ConnectedTo[v0]!=0){
+                    dH=dH+Macierz.Verticies[v].ConnectedTo[v0]
+                    if(dH<=d){
+                        d=dH
+                        S=SH
+                    }
+                    dH=dH-Macierz.Verticies[v].ConnectedTo[v0]
+                }
+            }
+            SH.removeFirst()
+        }
+        
+        
         fun ZmianaWybranegoMisata(change:Int){
 
             Macierz.Verticies[WybraneMiasto].Data=input_miasto_name.text.toString()
@@ -460,6 +501,21 @@ class MainActivity : AppCompatActivity() {
             }
             if(!Check){
                 Toast.makeText(applicationContext, "Brak połączenia", Toast.LENGTH_SHORT).show()
+            }else{
+                while(S.isEmpty()==false){
+                    S.removeFirst()
+                }
+                while(SH.isEmpty()==false){
+                    SH.removeFirst()
+                }
+                d=999999999
+                dH=0
+                CyklHamiltona(0)
+                if(S.isEmpty()==false){
+                    Toast.makeText(applicationContext, "Cos Znaleziono!", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(applicationContext, "xdxdxdxd brak cykluuu xdxddd!", Toast.LENGTH_SHORT).show()
+                }
             }
 
         }
