@@ -141,41 +141,68 @@ class MainActivity : AppCompatActivity() {
         for(i in 0..15){
             Visited[i]=false
         }
-        fun CyklHamiltona(v :Int){
+        fun TSP(v :Int){
 
             powtorzeniacyklu++
             Log.i("Cykl ",  powtorzeniacyklu.toString()+" V:"+v.toString())
 
             SH.add(v)
 
-            if(SH.size!=n){
+            if(SH.size<n){
                 Visited[v]=true
-                for(u in 0..15){
-                    if(Macierz.Verticies[v].Connections[u]==0){
-                        continue
+                for(u in 0..n-1){
+                    if(!(Visited[u]==true)){
+                        dH=dH+Macierz.Verticies[v].Connections[u]
+                        TSP(u)
+                        dH=dH-Macierz.Verticies[v].Connections[u]
                     }
-                    if(Visited[u]==true){
-                        continue
-                    }
-                    dH=dH+Macierz.Verticies[v].Connections[u]
-                    CyklHamiltona(u)
-                    dH=dH-Macierz.Verticies[v].Connections[u]
                 }
                 Visited[v]=false
-
             }else{
-                if(Macierz.Verticies[v].Connections[v0]!=0){
-                    dH=dH+Macierz.Verticies[v].Connections[v0]
-                    if(!(dH>=d)){
+                if(Macierz.Verticies[v0].Connections[v]>0){
+                    dH+=Macierz.Verticies[v].Connections[v0]
+                    if(dH<d){
                         d=dH
                         S=SH
                     }
-                    dH=dH-Macierz.Verticies[v].Connections[v0]
+                    dH-=Macierz.Verticies[v].Connections[v0]
                 }
             }
             SH.removeFirst()
         }
-        
+
+        fun NearestNeighbor(v : Int): String {
+            var Stos = ArrayDeque<Int>()
+            var vh = v
+            var Waga=0
+            var Visited= BooleanArray(16)
+
+            while(Stos.size<=15) {
+                var smallestindex=-1
+                var nowawaga=99999999
+                for (u in 0..15){
+                    if(Visited[u]==false && Macierz.Verticies[vh].Connections[u]>0){
+                        if(Macierz.Verticies[vh].Connections[u]<nowawaga){
+                                smallestindex=u
+                                nowawaga=Macierz.Verticies[vh].Connections[u]
+                        }
+                    }
+                }
+
+                Visited[vh]=true
+                vh=smallestindex
+                if(vh==-1){
+                    Stos.add(v)
+                    Stos.addFirst(v)
+                    break
+                }else{
+                    Waga+=nowawaga
+                    Stos.add(smallestindex)
+                }
+            }
+
+            return Stos.toString()+Waga.toString()
+        }
         
         fun ZmianaWybranegoMisata(change:Int){
 
@@ -512,7 +539,10 @@ class MainActivity : AppCompatActivity() {
             if(!Check){
                 Toast.makeText(applicationContext, "Brak połączenia", Toast.LENGTH_SHORT).show()
             }else{
-                while(S.isEmpty()==false){
+                text_wynik.text=NearestNeighbor(0)
+
+
+                /*while(S.isEmpty()==false){
                     S.removeFirst()
                 }
                 while(SH.isEmpty()==false){
@@ -524,12 +554,16 @@ class MainActivity : AppCompatActivity() {
                 d=999999999
                 dH=0
 
-                CyklHamiltona(0)
+                Toast.makeText(applicationContext, "To zajmie moment! "+Math.pow(16.00,16.00).toString(), Toast.LENGTH_SHORT).show()
+
+                TSP(0)
                 if(S.isEmpty()==false){
                     Toast.makeText(applicationContext, "Cos Znaleziono!", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(applicationContext, "xdxdxdxd brak cykluuu xdxddd!", Toast.LENGTH_SHORT).show()
-                }
+                }*/
+
+
             }
 
         }
