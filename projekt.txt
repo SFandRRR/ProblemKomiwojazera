@@ -11,7 +11,7 @@ Orientacja aplikacji będzie pionowa.
 U szczytu widoku będzie wyświetlane obecne miasto, z opcją zmiany nazwy, a zboku dwa przyciski, umożliwiające przejście do następnego miasta.
 
 Pod tym znajdować się bedzie widok z opcją przesuwania, na podstawie obecnie wybranego miasta będą wyświetlane pola, do których będzie można wprowadzić długość trasy do innego miasta.
-Pozycji w tym widoku będzie 16, jedna dla każdego miasta, gdzie pole wprowadzania obecnego miasta będzie zablokowane, żeby nie tworzyć połączeń samych z sobą.
+Pozycji w tym widoku będzie 16, jedna dla każdego miasta, gdzie pole wprowadzania obecnego miasta będzie ukryte, żeby nie tworzyć połączeń samych z sobą.
 
 Poniżej będzie kolejne okno przesuwne, tym razem wyświetlające proces tego algorytmu, w postaci tekstu.
 
