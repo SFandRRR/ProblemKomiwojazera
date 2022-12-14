@@ -8,7 +8,7 @@ Wprowadzone dane nie są zapisywanie po wyłączeniu aplikacji lub po nagłym za
 Aplikacja nie posiada awaryjnego zakończenia procesu, ze względu na niskie użycie pamięci.
 
 3. Do projektu zostanie wykorzystanie środowisko Android Studio.
-Do rozwiązania problemu zostaną wykorzystane grafy oraz algorytm Nearest Neighbor, ze względu na krótki czas obliczeń, pomijając średnio optymalne rezultaty.
+Do rozwiązania problemu zostaną wykorzystane grafy oraz Greedy Algorythim, ze względu na krótki czas obliczeń, pomijając średnio optymalne rezultaty.
 
 4.Aplikacja na początku inicjalizuje wszystkie elementy, dopiero potem pozwalająć użytkownikowi na wejście w interakcjie z programem głównym.
 W przypadku za pauzowania aplikacji, wróci ona do stanu przy ponownym otworzeniu jej okna.
