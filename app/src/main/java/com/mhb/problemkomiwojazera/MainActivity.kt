@@ -171,7 +171,7 @@ class MainActivity : AppCompatActivity() {
             SH.removeFirst()
         }
 
-        fun NearestNeighbor(v : Int): String {
+        fun NearestNeighbor(v : Int): ArrayDeque<Int> {
             var Stos = ArrayDeque<Int>()
             var vh = v
             var Waga=0
@@ -194,6 +194,7 @@ class MainActivity : AppCompatActivity() {
                 if(vh==-1){
                     Stos.add(v)
                     Stos.addFirst(v)
+                    Waga+=Macierz.Verticies[Stos.last()].Connections[v]
                     break
                 }else{
                     Waga+=nowawaga
@@ -201,7 +202,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            return Stos.toString()+Waga.toString()
+            Stos.add(Waga)
+            return Stos
         }
         
         fun ZmianaWybranegoMisata(change:Int){
@@ -539,30 +541,13 @@ class MainActivity : AppCompatActivity() {
             if(!Check){
                 Toast.makeText(applicationContext, "Brak połączenia", Toast.LENGTH_SHORT).show()
             }else{
-                text_wynik.text=NearestNeighbor(0)
-
-
-                /*while(S.isEmpty()==false){
-                    S.removeFirst()
+                var Wynik =NearestNeighbor(0)
+                var Rezultat=""
+                Rezultat="Całkowita długość podróży: "+Wynik.last().toString()+"\n"
+                for(x in 0..(Wynik.size-3)){
+                    Rezultat+=" "+Macierz.Verticies[Wynik[x]].Data+" -> "+Macierz.Verticies[Wynik[x+1]].Data+"\n"
                 }
-                while(SH.isEmpty()==false){
-                    SH.removeFirst()
-                }
-                for(i in 0..15){
-                    Visited[i]=false
-                }
-                d=999999999
-                dH=0
-
-                Toast.makeText(applicationContext, "To zajmie moment! "+Math.pow(16.00,16.00).toString(), Toast.LENGTH_SHORT).show()
-
-                TSP(0)
-                if(S.isEmpty()==false){
-                    Toast.makeText(applicationContext, "Cos Znaleziono!", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(applicationContext, "xdxdxdxd brak cykluuu xdxddd!", Toast.LENGTH_SHORT).show()
-                }*/
-
+                text_wynik.text=Rezultat
 
             }
 
