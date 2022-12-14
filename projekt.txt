@@ -20,6 +20,7 @@ Oraz przyciskiem pozwalającym zapisać rezultat w postaci obrazu.
 
 === Rozwiązania ===
 
-Trasa komiwojażera jest cyklem przechodzącym przez każdy wierzchołek grafu dokładnie jeden raz, więc jest to zatem cykl Hamiltona.
+Trasa komiwojażera jest cyklem przechodzącym przez każdy wierzchołek grafu dokładnie jeden raz.
 Problem komiwojażera jest problemem o wykładniczej złożoności obliczeniowej O ( n! ).
-Ze względu na niewielką ilość miast, zostanie wykorzystana Rekurencyjna procedura TSP.
+Wykorzystam algorytm Nearest Neighbor, ze względu na krótki czas obliczeń.
+Wyniki tego algorytmu są jednak średnio optymalne.
