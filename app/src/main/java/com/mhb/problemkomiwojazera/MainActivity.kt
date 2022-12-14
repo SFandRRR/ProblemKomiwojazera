@@ -545,7 +545,8 @@ class MainActivity : AppCompatActivity() {
                 var Rezultat=""
                 Rezultat="Całkowita długość podróży: "+Wynik.last().toString()+"\n"
                 for(x in 0..(Wynik.size-3)){
-                    Rezultat+=" "+Macierz.Verticies[Wynik[x]].Data+" -> "+Macierz.Verticies[Wynik[x+1]].Data+"\n"
+                    Rezultat+=" "+Macierz.Verticies[Wynik[x]].Data+" -> "+Macierz.Verticies[Wynik[x+1]].Data+
+                            "    Odległość: "+Macierz.Verticies[Wynik[x]].Connections[Wynik[x+1]]+"\n"
                 }
                 text_wynik.text=Rezultat
 
